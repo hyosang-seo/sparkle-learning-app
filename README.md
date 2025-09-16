@@ -8,9 +8,9 @@
 
 ### 🎬 실제 사용 영상
 
-<iframe width="800" height="450" src="https://blogautumn.tistory.com/34" frameborder="0" allowfullscreen></iframe>
+[![스파클 가사 학습 시현영상](https://img.shields.io/badge/📹_실제_사용_영상_보기-클릭하세요!-red?style=for-the-badge&logo=youtube)](https://blogautumn.tistory.com/34)
 
-*[어텀의 블로그](https://blogautumn.tistory.com/34)에서 실제 사용 영상을 확인하실 수 있습니다*
+> **💡 실제 사용 영상**: [어텀의 블로그](https://blogautumn.tistory.com/34)에서 합창단에서 실제 사용하는 모습을 확인하실 수 있습니다
 
 ### 🚀 앱 체험하기
 
