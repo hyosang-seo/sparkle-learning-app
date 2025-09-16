@@ -2,6 +2,12 @@
 
 일본어 가사 "스파클"을 학습하기 위한 웹 애플리케이션입니다.
 
+## 📹 시현영상
+
+https://github.com/hyosang-seo/sparkle-learning-app/blob/main/assets/videos/sparkle.mp4
+
+> 애플리케이션의 주요 기능과 사용법을 보여주는 시현영상입니다.
+
 ## 🚀 실행 방법
 
 1. Docker Desktop 실행
@@ -25,6 +31,9 @@ sparkle/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── nginx.conf
+├── assets/
+│   └── videos/
+│       └── sparkle.mp4
 └── src/
     ├── index.html
     ├── style.css
