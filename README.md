@@ -6,13 +6,21 @@
 
 <div align="center">
 
-![스파클 가사 학습 시현영상](assets/videos/test.MP4)
+### 🎬 실제 사용 영상
 
-*애플리케이션의 주요 기능과 사용법을 보여주는 시현영상*
+<iframe width="800" height="450" src="https://blogautumn.tistory.com/34" frameborder="0" allowfullscreen></iframe>
+
+*[어텀의 블로그](https://blogautumn.tistory.com/34)에서 실제 사용 영상을 확인하실 수 있습니다*
+
+### 🚀 앱 체험하기
+
+[![스파클 가사 학습](https://img.shields.io/badge/🚀_앱_체험하기-http://localhost:3000-blue?style=for-the-badge)](http://localhost:3000)
+
+[![시현영상 보기](https://img.shields.io/badge/📹_시현영상_보기-demo.html-green?style=for-the-badge)](src/demo.html)
 
 </div>
 
-> 💡 **시현영상 보기**: [demo.html](src/demo.html) 페이지에서 전체 화면으로 확인하실 수 있습니다.
+> 💡 **실행 방법**: `docker compose up --build` 명령어로 앱을 실행한 후 위 버튼을 클릭하세요.
 
 ## ✨ 주요 특징
 
