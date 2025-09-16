@@ -6,14 +6,13 @@
 
 <div align="center">
 
-<video width="800" height="450" controls autoplay muted loop>
-  <source src="assets/videos/test.MP4" type="video/mp4">
-  브라우저가 비디오를 지원하지 않습니다.
-</video>
+![스파클 가사 학습 시현영상](assets/videos/test.MP4)
 
 *애플리케이션의 주요 기능과 사용법을 보여주는 시현영상*
 
 </div>
+
+> 💡 **시현영상 보기**: [demo.html](src/demo.html) 페이지에서 전체 화면으로 확인하실 수 있습니다.
 
 ## ✨ 주요 특징
 
