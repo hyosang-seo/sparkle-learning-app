@@ -4,7 +4,7 @@
 
 ## 📹 시현영상
 
-https://github.com/hyosang-seo/sparkle-learning-app/blob/main/assets/videos/sparkle.mp4
+https://github.com/hyosang-seo/sparkle-learning-app/blob/main/assets/videos/test.MP4
 
 > 애플리케이션의 주요 기능과 사용법을 보여주는 시현영상입니다.
 

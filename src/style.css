@@ -5,10 +5,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
-    color: #333;
+    color: #2c3e50;
+    line-height: 1.6;
 }
 
 .container {
@@ -19,48 +20,75 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 30px;
-    color: white;
+    margin-bottom: 40px;
+    color: #2c3e50;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
 }
 
 header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+    background: rgba(255,255,255,0.8);
+    padding: 24px 32px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 .btn {
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 14px 28px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 .btn:active {
@@ -69,69 +97,88 @@ header p {
 
 .progress {
     flex: 1;
-    margin-left: 20px;
+    margin-left: 24px;
 }
 
 .progress-bar {
     width: 100%;
-    height: 8px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 4px;
+    height: 6px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
     overflow: hidden;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+    background: linear-gradient(90deg, #667eea, #764ba2);
     width: 0%;
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
+    border-radius: 3px;
 }
 
 #progressText {
-    color: white;
-    font-weight: 600;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .lyrics-container {
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.9);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .word-group {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.6);
     border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.word-group:hover {
+    background: rgba(255,255,255,0.8);
+    transform: translateY(-1px);
 }
 
 .word-item {
     display: inline-block;
-    margin: 5px 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    margin: 6px 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
     cursor: pointer;
     position: relative;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .word-item:hover {
     background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .word-item.empty {
-    background: rgba(255, 107, 107, 0.1);
-    border: 2px dashed #ff6b6b;
-    min-width: 120px;
-    height: 50px;
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px dashed #667eea;
+    min-width: 140px;
+    height: 60px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .word-input {
@@ -140,38 +187,42 @@ header p {
     border: none;
     background: transparent;
     text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #2c3e50;
     outline: none;
-    padding: 5px;
+    padding: 8px;
+    font-family: inherit;
 }
 
 .word-input::placeholder {
-    color: #ff6b6b;
-    opacity: 0.7;
-    font-size: 0.9rem;
+    color: #667eea;
+    opacity: 0.6;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .word-item.correct {
-    background: rgba(78, 205, 196, 0.2);
-    border: 2px solid #4ecdc4;
+    background: rgba(46, 204, 113, 0.15);
+    border: 2px solid #2ecc71;
+    transform: scale(1.02);
 }
 
 .word-item.incorrect {
-    background: rgba(255, 107, 107, 0.2);
-    border: 2px solid #ff6b6b;
+    background: rgba(231, 76, 60, 0.15);
+    border: 2px solid #e74c3c;
     animation: shake 0.5s ease-in-out;
 }
 
 .sentence-completed {
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(68, 160, 141, 0.1));
-    border-radius: 15px;
-    border: 2px solid #4ecdc4;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    border-radius: 20px;
+    border: 2px solid #2ecc71;
     text-align: center;
-    margin: 10px 0;
+    margin: 16px 0;
     animation: sentenceComplete 0.8s ease-in-out;
+    box-shadow: 0 8px 24px rgba(46, 204, 113, 0.2);
 }
 
 @keyframes sentenceComplete {
@@ -294,51 +345,66 @@ header p {
 
 .feedback {
     text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: 600;
+    padding: 20px;
+    border-radius: 16px;
+    font-weight: 500;
     font-size: 1.1rem;
-    min-height: 50px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .feedback.success {
-    background: rgba(78, 205, 196, 0.2);
+    background: rgba(46, 204, 113, 0.15);
     color: #27ae60;
-    border: 2px solid #4ecdc4;
+    border: 2px solid #2ecc71;
+    box-shadow: 0 8px 24px rgba(46, 204, 113, 0.2);
 }
 
 .feedback.error {
-    background: rgba(255, 107, 107, 0.2);
+    background: rgba(231, 76, 60, 0.15);
     color: #e74c3c;
-    border: 2px solid #ff6b6b;
+    border: 2px solid #e74c3c;
+    box-shadow: 0 8px 24px rgba(231, 76, 60, 0.2);
 }
 
 .feedback.info {
-    background: rgba(52, 152, 219, 0.2);
+    background: rgba(52, 152, 219, 0.15);
     color: #2980b9;
     border: 2px solid #3498db;
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.2);
 }
 
 .completion-message {
     text-align: center;
-    padding: 40px;
+    padding: 48px;
     background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    margin-top: 20px;
+    border-radius: 24px;
+    margin-top: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .completion-message h2 {
-    color: #27ae60;
-    font-size: 2rem;
-    margin-bottom: 15px;
+    color: #2ecc71;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .completion-message p {
     color: #7f8c8d;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
