@@ -94,9 +94,14 @@ class SparkleLearningApp {
                             <div class="korean-text visible">${word.korean}</div>
                         `;
                     } else {
+                        // 현재 입력해야 할 단어인지 확인하여 발음 힌트 표시
+                        const isCurrentWord = lineIndex === this.currentLineIndex && wordIndex === this.currentWordInLine;
+                        const pronunciationHint = isCurrentWord ? `<div class="pronunciation-hint visible">${word.pronunciation}</div>` : `<div class="pronunciation-hint">${word.pronunciation}</div>`;
+                        
                         wordDiv.innerHTML = `
                             <div class="japanese-text">${word.japanese}</div>
                             <div class="korean-text">${word.korean}</div>
+                            ${pronunciationHint}
                         `;
                     }
                     
