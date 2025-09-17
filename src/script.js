@@ -13,7 +13,7 @@ class SparkleLearningApp {
     }
     
     initializeApp() {
-        // 총 단어 수 계산
+        // 총 단어 수 계산 (현재 선택된 음역에 따라)
         this.totalWords = sparkleLyrics.words.reduce((total, line) => total + line.length, 0);
         
         this.renderLyrics();
@@ -28,6 +28,15 @@ class SparkleLearningApp {
         
         document.getElementById('hintBtn').addEventListener('click', () => {
             this.showHint();
+        });
+        
+        // 음역 선택 버튼 이벤트
+        document.getElementById('tenorBtn').addEventListener('click', () => {
+            this.switchVoice('tenor');
+        });
+        
+        document.getElementById('altoBtn').addEventListener('click', () => {
+            this.switchVoice('alto');
         });
     }
     
@@ -359,6 +368,22 @@ class SparkleLearningApp {
         this.showFeedback("모든 가사를 완성했습니다! 🎊", "success");
     }
     
+    switchVoice(voice) {
+        // 음역 변경
+        sparkleLyrics.currentVoice = voice;
+        
+        // 버튼 상태 업데이트
+        document.querySelectorAll('.voice-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(voice + 'Btn').classList.add('active');
+        
+        // 앱 상태 초기화
+        this.resetApp();
+        
+        // 피드백 메시지
+        const voiceName = voice === 'tenor' ? '테너' : '알토';
+        this.showFeedback(`${voiceName} 가사로 전환했습니다!`, "info");
+    }
+    
     resetApp() {
         this.currentWordIndex = 0;
         this.correctAnswers = 0;
@@ -366,6 +391,9 @@ class SparkleLearningApp {
         this.currentWordInLine = 0;
         this.isCompleted = false;
         this.completedSentences.clear(); // 완성된 문장 초기화
+        
+        // 총 단어 수 재계산 (현재 음역에 따라)
+        this.totalWords = sparkleLyrics.words.reduce((total, line) => total + line.length, 0);
         
         document.getElementById('pronunciationInput').value = '';
         document.getElementById('feedback').textContent = '';
