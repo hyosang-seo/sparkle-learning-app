@@ -26,10 +26,6 @@ class SparkleLearningApp {
             this.resetApp();
         });
         
-        document.getElementById('hintBtn').addEventListener('click', () => {
-            this.showHint();
-        });
-        
         // 음역 선택 버튼 이벤트
         document.getElementById('tenorBtn').addEventListener('click', () => {
             this.switchVoice('tenor');
@@ -96,7 +92,10 @@ class SparkleLearningApp {
                     } else {
                         // 현재 입력해야 할 단어인지 확인하여 발음 힌트 표시
                         const isCurrentWord = lineIndex === this.currentLineIndex && wordIndex === this.currentWordInLine;
-                        const pronunciationHint = isCurrentWord ? `<div class="pronunciation-hint visible">${word.pronunciation}</div>` : `<div class="pronunciation-hint">${word.pronunciation}</div>`;
+                        const isFirstWord = lineIndex === 0 && wordIndex === 0;
+                        
+                        // 첫 번째 단어는 항상 희미하게 표시
+                        const pronunciationHint = (isCurrentWord || isFirstWord) ? `<div class="pronunciation-hint visible">${word.pronunciation}</div>` : `<div class="pronunciation-hint">${word.pronunciation}</div>`;
                         
                         wordDiv.innerHTML = `
                             <div class="japanese-text">${word.japanese}</div>
@@ -174,9 +173,6 @@ class SparkleLearningApp {
         // 틀린 단어에 시각적 효과 추가
         input.parentElement.classList.add('incorrect');
         
-        // 힌트 표시: 정답을 연하게 보여주기
-        this.showHint(input, correctPronunciation);
-        
         setTimeout(() => {
             input.parentElement.classList.remove('incorrect');
         }, 1000);
@@ -185,35 +181,11 @@ class SparkleLearningApp {
         input.focus();
     }
     
-    showHint(input, correctPronunciation) {
-        const lineIndex = parseInt(input.dataset.lineIndex);
-        const wordIndex = parseInt(input.dataset.wordIndex);
-        const word = sparkleLyrics.words[lineIndex][wordIndex];
-        
-        // 힌트를 위한 임시 요소 생성
-        const hintElement = document.createElement('div');
-        hintElement.className = 'word-hint';
-        hintElement.innerHTML = `
-            <div class="hint-japanese">${word.japanese}</div>
-            <div class="hint-korean">${word.korean}</div>
-            <div class="hint-pronunciation">${correctPronunciation}</div>
-        `;
-        
-        // 입력 필드 다음에 힌트 삽입
-        input.parentElement.appendChild(hintElement);
-        
-        // 3초 후 힌트 제거
-        setTimeout(() => {
-            if (hintElement.parentElement) {
-                hintElement.parentElement.removeChild(hintElement);
-            }
-        }, 3000);
-    }
-    
     isWordCompleted(lineIndex, wordIndex) {
         // 현재 단어보다 앞에 있는 단어들은 완료된 것으로 간주
         const currentPosition = this.getCurrentPosition();
         const targetPosition = this.getWordPosition(lineIndex, wordIndex);
+        
         return targetPosition < currentPosition;
     }
     
@@ -357,11 +329,6 @@ class SparkleLearningApp {
             feedback.textContent = '';
             feedback.className = 'feedback';
         }, 3000);
-    }
-    
-    showHint() {
-        const currentWord = this.getCurrentWord();
-        this.showFeedback(`힌트: "${currentWord.pronunciation}"`, "info");
     }
     
     showCompletionMessage() {

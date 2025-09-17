@@ -6,6 +6,6 @@ services:
     ports:
       - "3000:80"
     volumes:
-      - ./src:/usr/share/nginx/html
+      - .:/usr/share/nginx/html
     environment:
       - NODE_ENV=production
