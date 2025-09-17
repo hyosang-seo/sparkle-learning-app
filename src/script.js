@@ -229,7 +229,12 @@ class SparkleLearningApp {
     }
     
     checkPronunciation() {
-        const input = document.getElementById('pronunciationInput');
+        const input = document.querySelector('.word-input');
+        if (!input) {
+            this.showFeedback("입력할 단어가 없습니다!", "error");
+            return;
+        }
+        
         const userInput = input.value.trim().toLowerCase();
         
         if (!userInput) {
@@ -395,7 +400,12 @@ class SparkleLearningApp {
         // 총 단어 수 재계산 (현재 음역에 따라)
         this.totalWords = sparkleLyrics.words.reduce((total, line) => total + line.length, 0);
         
-        document.getElementById('pronunciationInput').value = '';
+        // 모든 입력 필드 초기화
+        const inputs = document.querySelectorAll('.word-input');
+        inputs.forEach(input => {
+            input.value = '';
+        });
+        
         document.getElementById('feedback').textContent = '';
         document.getElementById('feedback').className = 'feedback';
         
