@@ -323,12 +323,21 @@ header p {
     font-weight: 600;
 }
 
+/* 첫 번째 발음 힌트 스타일 */
 .pronunciation-hint {
     font-size: 0.8rem;
-    color: #e74c3c;
+    color: #bdc3c7;
+    opacity: 0.4;
     font-style: italic;
     margin-top: 2px;
+    transition: opacity 0.3s ease;
 }
+
+.pronunciation-hint.visible {
+    opacity: 0.7;
+    color: #95a5a6;
+}
+
 
 /* 힌트 스타일 */
 .word-hint {
