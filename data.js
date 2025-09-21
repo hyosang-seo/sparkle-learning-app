@@ -68,22 +68,20 @@ const sparkleLyrics = {
             // 두 번째 문장: "사요나라 카라 이치반 토오이 바쇼데 마치아와세요"
             [
                 { japanese: "사요나라", korean: "\"안녕(이별)\"과", pronunciation: "사요나라" },
-                { japanese: "카라", korean: "가장", pronunciation: "카라" },
-                { japanese: "이치반", korean: "먼", pronunciation: "이치반" },
-                { japanese: "토오이", korean: "곳에서", pronunciation: "토오이" },
-                { japanese: "바쇼데", korean: "만나자", pronunciation: "바쇼데" },
-                { japanese: "마치아와세요", korean: "", pronunciation: "마치아와세요" }
+                { japanese: "카라", korean: "으로부터", pronunciation: "카라" },
+                { japanese: "이치반", korean: "가장", pronunciation: "이치반" },
+                { japanese: "토오이바쇼데", korean: "먼 장소에서", pronunciation: "토오이바쇼데" },
+                { japanese: "마치아와세요", korean: "만나자", pronunciation: "마치아와세요" }
             ],
             // 세 번째 문장: "지소니 아루 코토바데 데키아 갓타세카이 오니 큰다"
             [
-                { japanese: "지소니", korean: "작은", pronunciation: "지소니" },
-                { japanese: "아루", korean: "말로", pronunciation: "아루" },
-                { japanese: "코토바데", korean: "만들어진", pronunciation: "코토바데" },
-                { japanese: "데키아", korean: "세계가", pronunciation: "데키아" },
-                { japanese: "갓타", korean: "귀신처럼", pronunciation: "갓타" },
-                { japanese: "세카이", korean: "크다", pronunciation: "세카이" },
-                { japanese: "오니", korean: "", pronunciation: "오니" },
-                { japanese: "큰다", korean: "", pronunciation: "큰다" }
+                { japanese: "지소니", korean: "사전에", pronunciation: "지소니" },
+                { japanese: "아루", korean: "있는", pronunciation: "아루" },
+                { japanese: "코토바데", korean: "말로", pronunciation: "코토바데" },
+                { japanese: "데키아갓타", korean: "완성된", pronunciation: "데키아캇타" },
+                { japanese: "세카이오", korean: "세상을", pronunciation: "세카이오" },
+                { japanese: "니쿤다", korean: "미워하다", pronunciation: "니쿤다" },
+
             ],
             // 네 번째 문장: "만고 노나카데 하치가츠 노이주 아사"
             [
